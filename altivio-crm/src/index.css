@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Professional Polish Palette */
+  --color-primary-dark: #0A2540;
+  --color-accent-indigo: #635BFF;
+  --color-polish-bg: #F6F9FC;
+  --color-polish-text-main: #1A1F36;
+  --color-polish-text-sub: #4F566B;
+  --color-polish-border: #E3E8EE;
+  --color-polish-success: #00D66F;
+  
+  --background-image-ai-gradient: linear-gradient(135deg, #635BFF 0%, #00D66F 100%);
+
+  /* Overriding standard primary for compatibility */
+  --color-primary-50: #f5f7ff;
+  --color-primary-100: #ebf0fe;
+  --color-primary-200: #ced9fd;
+  --color-primary-300: #adc0fc;
+  --color-primary-400: #8ba7fb;
+  --color-primary-500: #635BFF; /* Accent color */
+  --color-primary-600: #564fdb;
+  --color-primary-700: #4842b5;
+  --color-primary-800: #3a358e;
+  --color-primary-900: #0A2540; /* Primary dark */
+}
+
+@layer base {
+  body {
+    @apply bg-polish-bg text-polish-text-main antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+}
+
+.polish-card {
+  @apply bg-white border border-polish-border shadow-[0_2px_4px_rgba(0,0,0,0.02)] rounded-lg;
+}
+
+.ai-glow {
+  @apply relative overflow-hidden;
+}
+
+.ai-glow::after {
+  content: '';
+  @apply absolute -top-12 -right-12 w-36 h-36 bg-ai-gradient opacity-30 blur-[40px] pointer-events-none;
+}
+
+.stat-label {
+  @apply text-[11px] font-semibold text-polish-text-sub uppercase tracking-[0.5px] mb-2;
+}
+
+.stat-value {
+  @apply text-2xl font-bold text-primary-dark;
+}
+
+
